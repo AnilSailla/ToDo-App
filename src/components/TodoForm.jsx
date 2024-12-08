@@ -6,7 +6,7 @@ export default function TodoForm() {
     const [todo,setTodo]= useState('');
     function handleSubmit(e){
         e.preventDefault()
-        addTodo({id:Date.now(),todo:todo,completed:false});
+        {todo !== '' && addTodo({id:Date.now(),todo:todo,completed:false});}  //if todo is empty we no need to add it
         setTodo("");
     }
   return (
